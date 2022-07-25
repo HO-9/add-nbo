@@ -2,7 +2,6 @@
 #include<stdint.h>
 #include<stddef.h>
 #include<netinet/in.h>
-#define READLEN 4
 
 
 void usage(void)
@@ -19,8 +18,8 @@ int main(int argc, char **argv)
 
     uint32_t f1,f2;
 
-    fread(&f1, READLEN, 1, fp1);
-    fread(&f2, READLEN, 1, fp2);
+    fread(&f1, 4, 1, fp1);
+    fread(&f2, 4, 1, fp2);
 
     f1 = ntohl(f1);
     f2 = ntohl(f2);
